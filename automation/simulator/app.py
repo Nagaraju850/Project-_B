@@ -1,22 +1,20 @@
-from flask import Flask, jsonify, request
+import json
+from pathlib import Path
+
+from flask import Flask, jsonify
 
 
 app = Flask(__name__)
 
-equipments = {
-    101: {
-        "id": 101,
-        "name": "Equipment A",
-        "type": "FCU",
-        "status": "active",
-    },
-    102: {
-        "id": 102,
-        "name": "Equipment B",
-        "type": "AHU",
-        "status": "inactive",
-    },
-}
+project_folder = Path(__file__).resolve().parent.parent.parent
+equipment_file = project_folder / "config" / "equipment.json"
+
+with open(equipment_file, "r", encoding="utf-8") as file:
+    equipment_list = json.load(file)
+
+equipments = {}
+for equipment in equipment_list:
+    equipments[equipment["id"]] = equipment
 
 # Preserve the original misspelled name for compatibility.
 equiments = equipments

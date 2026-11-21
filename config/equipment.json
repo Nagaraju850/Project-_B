@@ -1,0 +1,14 @@
+[
+  {
+    "id": 101,
+    "name": "Equipment A",
+    "type": "FCU",
+    "status": "active"
+  },
+  {
+    "id": 102,
+    "name": "Equipment B",
+    "type": "AHU",
+    "status": "inactive"
+  }
+]
