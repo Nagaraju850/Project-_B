@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.5.1 (Python 3.12.10 on win32)" generated="2026-11-27T21:44:38.508321" rpa="false" schemaversion="5">
+<robot generator="Robot 7.5.1 (Python 3.12.10 on win32)" generated="2026-11-27T22:15:55.018365" rpa="false" schemaversion="5">
 <suite id="s1" name="Get Equipment" source="C:\Project_B\robot_api_project\get_equipment.robot">
 <kw name="Create Session" owner="RequestsLibrary" type="SETUP">
-<msg time="2026-11-27T21:44:38.949903" level="INFO">Creating Session using : alias=Equipment_API, url=http://127.0.0.1:5000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2026-11-27T22:15:55.830002" level="INFO">Creating Session using : alias=Equipment_API, url=http://127.0.0.1:5000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
 <arg>Equipment_API</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2026-11-27T21:44:38.948902" elapsed="0.001001"/>
+<status status="PASS" start="2026-11-27T22:15:55.830002" elapsed="0.001002"/>
 </kw>
 <test id="s1-t1" name="Test Get All Equipment" line="9">
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2026-11-27T21:44:38.989066" level="INFO">GET Request : url=http://127.0.0.1:5000/equipment 
+<msg time="2026-11-27T22:15:55.838005" level="INFO">GET Request : url=http://127.0.0.1:5000/equipment 
  path_url=/equipment 
  headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2026-11-27T21:44:38.989066" level="INFO">GET Response : url=http://127.0.0.1:5000/equipment 
+<msg time="2026-11-27T22:15:55.838005" level="INFO">GET Response : url=http://127.0.0.1:5000/equipment 
  status=200, reason=OK 
- headers={'Server': 'Werkzeug/3.1.9 Python/3.12.10', 'Date': 'Fri, 27 Nov 2026 08:44:38 GMT', 'Content-Type': 'application/json', 'Content-Length': '191', 'Connection': 'close'} 
+ headers={'Server': 'Werkzeug/3.1.9 Python/3.12.10', 'Date': 'Fri, 27 Nov 2026 09:15:55 GMT', 'Content-Type': 'application/json', 'Content-Length': '191', 'Connection': 'close'} 
  body=[
   {
     "id": 101,
@@ -34,51 +34,51 @@
 ]
  
  </msg>
-<msg time="2026-11-27T21:44:38.989066" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2026-11-27T22:15:55.839004" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>Equipment_API</arg>
 <arg>/equipment</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-11-27T21:44:38.952903" elapsed="0.036163"/>
+<status status="PASS" start="2026-11-27T22:15:55.832004" elapsed="0.007000"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-11-27T21:44:38.994062" level="INFO">Argument types are:
+<msg time="2026-11-27T22:15:55.844005" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-11-27T21:44:38.994062" elapsed="0.000000"/>
+<status status="PASS" start="2026-11-27T22:15:55.843003" elapsed="0.001002"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${response.text}</arg>
 <arg>Equipment A</arg>
 <doc>Fails if the `container` does not contain the `item` one or more times.</doc>
-<status status="PASS" start="2026-11-27T21:44:39.000978" elapsed="0.001004"/>
+<status status="PASS" start="2026-11-27T22:15:55.845003" elapsed="0.001002"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${response.text}</arg>
 <arg>Equipment B</arg>
 <doc>Fails if the `container` does not contain the `item` one or more times.</doc>
-<status status="PASS" start="2026-11-27T21:44:39.002982" elapsed="0.001006"/>
+<status status="PASS" start="2026-11-27T22:15:55.846005" elapsed="0.001000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${response.text}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2026-11-27T21:44:39.008981" elapsed="0.001000"/>
+<status status="PASS" start="2026-11-27T22:15:55.847005" elapsed="0.003058"/>
 </kw>
-<status status="PASS" start="2026-11-27T21:44:38.950903" elapsed="0.060078"/>
+<status status="PASS" start="2026-11-27T22:15:55.831004" elapsed="0.020059"/>
 </test>
 <test id="s1-t2" name="Test Get Equipment 101" line="16">
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2026-11-27T21:44:39.020978" level="INFO">GET Request : url=http://127.0.0.1:5000/equipment/101 
+<msg time="2026-11-27T22:15:55.861392" level="INFO">GET Request : url=http://127.0.0.1:5000/equipment/101 
  path_url=/equipment/101 
  headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2026-11-27T21:44:39.020978" level="INFO">GET Response : url=http://127.0.0.1:5000/equipment/101 
+<msg time="2026-11-27T22:15:55.863334" level="INFO">GET Response : url=http://127.0.0.1:5000/equipment/101 
  status=200, reason=OK 
- headers={'Server': 'Werkzeug/3.1.9 Python/3.12.10', 'Date': 'Fri, 27 Nov 2026 08:44:39 GMT', 'Content-Type': 'application/json', 'Content-Length': '80', 'Connection': 'close'} 
+ headers={'Server': 'Werkzeug/3.1.9 Python/3.12.10', 'Date': 'Fri, 27 Nov 2026 09:15:55 GMT', 'Content-Type': 'application/json', 'Content-Length': '80', 'Connection': 'close'} 
  body={
   "id": 101,
   "name": "Equipment A",
@@ -87,40 +87,40 @@
 }
  
  </msg>
-<msg time="2026-11-27T21:44:39.020978" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2026-11-27T22:15:55.863334" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>Equipment_API</arg>
 <arg>/equipment/101</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-11-27T21:44:39.012982" elapsed="0.007996"/>
+<status status="PASS" start="2026-11-27T22:15:55.856061" elapsed="0.007273"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-11-27T21:44:39.022982" level="INFO">Argument types are:
+<msg time="2026-11-27T22:15:55.869064" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-11-27T21:44:39.022982" elapsed="0.000000"/>
+<status status="PASS" start="2026-11-27T22:15:55.869064" elapsed="0.000000"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${response.text}</arg>
 <arg>Equipment A</arg>
 <doc>Fails if the `container` does not contain the `item` one or more times.</doc>
-<status status="PASS" start="2026-11-27T21:44:39.023980" elapsed="0.000000"/>
+<status status="PASS" start="2026-11-27T22:15:55.870063" elapsed="0.001000"/>
 </kw>
-<status status="PASS" start="2026-11-27T21:44:39.011981" elapsed="0.012999"/>
+<status status="PASS" start="2026-11-27T22:15:55.854061" elapsed="0.017002"/>
 </test>
 <test id="s1-t3" name="Test Get Equipment 102" line="21">
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2026-11-27T21:44:39.034914" level="INFO">GET Request : url=http://127.0.0.1:5000/equipment/102 
+<msg time="2026-11-27T22:15:55.878062" level="INFO">GET Request : url=http://127.0.0.1:5000/equipment/102 
  path_url=/equipment/102 
  headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2026-11-27T21:44:39.034914" level="INFO">GET Response : url=http://127.0.0.1:5000/equipment/102 
+<msg time="2026-11-27T22:15:55.879067" level="INFO">GET Response : url=http://127.0.0.1:5000/equipment/102 
  status=200, reason=OK 
- headers={'Server': 'Werkzeug/3.1.9 Python/3.12.10', 'Date': 'Fri, 27 Nov 2026 08:44:39 GMT', 'Content-Type': 'application/json', 'Content-Length': '82', 'Connection': 'close'} 
+ headers={'Server': 'Werkzeug/3.1.9 Python/3.12.10', 'Date': 'Fri, 27 Nov 2026 09:15:55 GMT', 'Content-Type': 'application/json', 'Content-Length': '82', 'Connection': 'close'} 
  body={
   "id": 102,
   "name": "Equipment B",
@@ -129,80 +129,80 @@
 }
  
  </msg>
-<msg time="2026-11-27T21:44:39.034914" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2026-11-27T22:15:55.879067" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>Equipment_API</arg>
 <arg>/equipment/102</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-11-27T21:44:39.029914" elapsed="0.006000"/>
+<status status="PASS" start="2026-11-27T22:15:55.873063" elapsed="0.006004"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-11-27T21:44:39.042915" level="INFO">Argument types are:
+<msg time="2026-11-27T22:15:55.885063" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-11-27T21:44:39.041914" elapsed="0.001001"/>
+<status status="PASS" start="2026-11-27T22:15:55.885063" elapsed="0.000000"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${response.text}</arg>
 <arg>Equipment B</arg>
 <doc>Fails if the `container` does not contain the `item` one or more times.</doc>
-<status status="PASS" start="2026-11-27T21:44:39.046911" elapsed="0.000000"/>
+<status status="PASS" start="2026-11-27T22:15:55.886064" elapsed="0.001000"/>
 </kw>
-<status status="PASS" start="2026-11-27T21:44:39.028914" elapsed="0.030756"/>
+<status status="PASS" start="2026-11-27T22:15:55.872063" elapsed="0.015001"/>
 </test>
 <test id="s1-t4" name="Test Unknown Equipment Returns 404" line="26">
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2026-11-27T21:44:39.106368" level="INFO">GET Request : url=http://127.0.0.1:5000/equipment/999 
+<msg time="2026-11-27T22:15:55.894064" level="INFO">GET Request : url=http://127.0.0.1:5000/equipment/999 
  path_url=/equipment/999 
  headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2026-11-27T21:44:39.106368" level="INFO">GET Response : url=http://127.0.0.1:5000/equipment/999 
+<msg time="2026-11-27T22:15:55.894064" level="INFO">GET Response : url=http://127.0.0.1:5000/equipment/999 
  status=404, reason=NOT FOUND 
- headers={'Server': 'Werkzeug/3.1.9 Python/3.12.10', 'Date': 'Fri, 27 Nov 2026 08:44:39 GMT', 'Content-Type': 'application/json', 'Content-Length': '37', 'Connection': 'close'} 
+ headers={'Server': 'Werkzeug/3.1.9 Python/3.12.10', 'Date': 'Fri, 27 Nov 2026 09:15:55 GMT', 'Content-Type': 'application/json', 'Content-Length': '37', 'Connection': 'close'} 
  body={
   "error": "Equipment not found"
 }
  
  </msg>
-<msg time="2026-11-27T21:44:39.106368" level="INFO">${response} = &lt;Response [404]&gt;</msg>
+<msg time="2026-11-27T22:15:55.895067" level="INFO">${response} = &lt;Response [404]&gt;</msg>
 <var>${response}</var>
 <arg>Equipment_API</arg>
 <arg>/equipment/999</arg>
 <arg>expected_status=404</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-11-27T21:44:39.077823" elapsed="0.028545"/>
+<status status="PASS" start="2026-11-27T22:15:55.888064" elapsed="0.007003"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-11-27T21:44:39.113368" level="INFO">Argument types are:
+<msg time="2026-11-27T22:15:55.901669" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>404</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-11-27T21:44:39.112368" elapsed="0.001000"/>
+<status status="PASS" start="2026-11-27T22:15:55.900658" elapsed="0.001011"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${response.text}</arg>
 <arg>Equipment not found</arg>
 <doc>Fails if the `container` does not contain the `item` one or more times.</doc>
-<status status="PASS" start="2026-11-27T21:44:39.119858" elapsed="0.000990"/>
+<status status="PASS" start="2026-11-27T22:15:55.905728" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2026-11-27T21:44:39.066824" elapsed="0.061180"/>
+<status status="PASS" start="2026-11-27T22:15:55.888064" elapsed="0.026505"/>
 </test>
 <test id="s1-t5" name="Test Home Page Displays Equipment 101" line="31">
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2026-11-27T21:44:39.162390" level="INFO">GET Request : url=http://127.0.0.1:5000/?id=101 
+<msg time="2026-11-27T22:15:55.935812" level="INFO">GET Request : url=http://127.0.0.1:5000/?id=101 
  path_url=/?id=101 
  headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2026-11-27T21:44:39.162390" level="INFO">GET Response : url=http://127.0.0.1:5000/?id=101 
+<msg time="2026-11-27T22:15:55.936044" level="INFO">GET Response : url=http://127.0.0.1:5000/?id=101 
  status=200, reason=OK 
- headers={'Server': 'Werkzeug/3.1.9 Python/3.12.10', 'Date': 'Fri, 27 Nov 2026 08:44:39 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Content-Length': '857', 'Connection': 'close'} 
+ headers={'Server': 'Werkzeug/3.1.9 Python/3.12.10', 'Date': 'Fri, 27 Nov 2026 09:15:55 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Content-Length': '857', 'Connection': 'close'} 
  body=
         &lt;!doctype html&gt;
         &lt;title&gt;Equipment lookup&lt;/title&gt;
@@ -234,40 +234,40 @@
         
          
  </msg>
-<msg time="2026-11-27T21:44:39.163390" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2026-11-27T22:15:55.936044" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>Equipment_API</arg>
 <arg>url=/?id=101</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-11-27T21:44:39.131003" elapsed="0.032387"/>
+<status status="PASS" start="2026-11-27T22:15:55.919571" elapsed="0.016473"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-11-27T21:44:39.166392" level="INFO">Argument types are:
+<msg time="2026-11-27T22:15:55.939139" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-11-27T21:44:39.165391" elapsed="0.001001"/>
+<status status="PASS" start="2026-11-27T22:15:55.938137" elapsed="0.001002"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${response.text}</arg>
 <arg>Equipment A</arg>
 <doc>Fails if the `container` does not contain the `item` one or more times.</doc>
-<status status="PASS" start="2026-11-27T21:44:39.202391" elapsed="0.001001"/>
+<status status="PASS" start="2026-11-27T22:15:55.942241" elapsed="0.001003"/>
 </kw>
-<status status="PASS" start="2026-11-27T21:44:39.130003" elapsed="0.082389"/>
+<status status="PASS" start="2026-11-27T22:15:55.915567" elapsed="0.028678"/>
 </test>
 <test id="s1-t6" name="Test Home Page Displays Equipment 102" line="36">
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2026-11-27T21:44:39.262167" level="INFO">GET Request : url=http://127.0.0.1:5000/?id=102 
+<msg time="2026-11-27T22:15:55.960240" level="INFO">GET Request : url=http://127.0.0.1:5000/?id=102 
  path_url=/?id=102 
  headers={'User-Agent': 'python-requests/2.34.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2026-11-27T21:44:39.262167" level="INFO">GET Response : url=http://127.0.0.1:5000/?id=102 
+<msg time="2026-11-27T22:15:55.960240" level="INFO">GET Response : url=http://127.0.0.1:5000/?id=102 
  status=200, reason=OK 
- headers={'Server': 'Werkzeug/3.1.9 Python/3.12.10', 'Date': 'Fri, 27 Nov 2026 08:44:39 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Content-Length': '859', 'Connection': 'close'} 
+ headers={'Server': 'Werkzeug/3.1.9 Python/3.12.10', 'Date': 'Fri, 27 Nov 2026 09:15:55 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Content-Length': '859', 'Connection': 'close'} 
  body=
         &lt;!doctype html&gt;
         &lt;title&gt;Equipment lookup&lt;/title&gt;
@@ -299,31 +299,31 @@
         
          
  </msg>
-<msg time="2026-11-27T21:44:39.262167" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2026-11-27T22:15:55.960240" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>Equipment_API</arg>
 <arg>url=/?id=102</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2026-11-27T21:44:39.230540" elapsed="0.031627"/>
+<status status="PASS" start="2026-11-27T22:15:55.946239" elapsed="0.014001"/>
 </kw>
 <kw name="Should Be Equal As Integers" owner="BuiltIn">
-<msg time="2026-11-27T21:44:39.266165" level="INFO">Argument types are:
+<msg time="2026-11-27T22:15:55.962240" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to integers.</doc>
-<status status="PASS" start="2026-11-27T21:44:39.266165" elapsed="0.000000"/>
+<status status="PASS" start="2026-11-27T22:15:55.961239" elapsed="0.001001"/>
 </kw>
 <kw name="Should Contain" owner="BuiltIn">
 <arg>${response.text}</arg>
 <arg>Equipment B</arg>
 <doc>Fails if the `container` does not contain the `item` one or more times.</doc>
-<status status="PASS" start="2026-11-27T21:44:39.267166" elapsed="0.001000"/>
+<status status="PASS" start="2026-11-27T22:15:55.963238" elapsed="0.001001"/>
 </kw>
-<status status="PASS" start="2026-11-27T21:44:39.221539" elapsed="0.046627"/>
+<status status="PASS" start="2026-11-27T22:15:55.945240" elapsed="0.018999"/>
 </test>
-<status status="PASS" start="2026-11-27T21:44:38.511319" elapsed="0.758847"/>
+<status status="PASS" start="2026-11-27T22:15:55.020366" elapsed="0.944873"/>
 </suite>
 <statistics>
 <total>
