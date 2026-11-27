@@ -29,11 +29,11 @@ Test Unknown Equipment Returns 404
     Should Contain    ${response.text}    Equipment not found
 
 Test Home Page Displays Equipment 101
-    ${response}=    GET On Session    Equipment_API    url=/?id=101
+    ${response}=    GET On Session    Equipment_API    /?id=101
     Should Be Equal As Integers    ${response.status_code}    200
     Should Contain    ${response.text}    Equipment A
 
 Test Home Page Displays Equipment 102
-    ${response}=    GET On Session    Equipment_API    url=/?id=102
+    ${response}=    GET On Session    Equipment_API    /?id=102
     Should Be Equal As Integers    ${response.status_code}    200
     Should Contain    ${response.text}    Equipment B
